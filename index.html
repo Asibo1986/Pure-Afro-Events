@@ -169,10 +169,9 @@
       <section id="past-events">
   <h2>Past Event Flyers</h2>
   <div class="gallery">
-    <img src=" my-bg.jpeg" alt="Past Event Flyer 1">
-    <img src=" Flyer 15 Aug 2.png" alt="Past Event Flyer 2">
-    <img src="Flyer 15 Aug 1.png" alt="Past Event Flyer 3">
-    <img src="Flyer 15 Aug.png" alt="Past Event Flyer 4"> Add more flyers as needed -->
+    <img src=" Flyer 15 Aug 2.png" alt="Past Event Flyer 1">
+    <img src="Flyer 15 Aug 1.png" alt="Past Event Flyer 2">
+    <img src="Flyer 15 Aug.png" alt="Past Event Flyer 3"> Add more flyers as needed -->
   </div>
 </section>
       <section id="gallery">
@@ -186,9 +185,13 @@
       <section id="contact">
         <h2>Contact Us</h2>
         <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+          <label for="booking">Booking Inquiry:</label>
+          <textarea id="booking" name="booking" placeholder="Details about your booking request"></textarea>
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
           <textarea name="message" placeholder="Your Message" required></textarea>
+          <label for="collaboration">Collaboration Proposal:</label>
+          <textarea id="collaboration" name="collaboration" placeholder="Describe your collaboration idea"></textarea>
           <button type="submit">Send</button>
         </form>
       </section>

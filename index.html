@@ -2,292 +2,273 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pure Afro Events</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts for a modern look -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,400|Roboto:400,700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Montserrat', Arial, sans-serif;
+      font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
-      background: #f8f8fb;
+      background: #f7f7f7;
       color: #222;
-    }
-    header {
-      background: linear-gradient(90deg, #ff8c42, #000);
-      color: #fff;
-      padding: 60px 0 40px 0;
-      text-align: center;
-      position: relative;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0 0 15px 0;
-      font-weight: 700;
-    }
-    header p {
-      font-size: 1.3rem;
-      margin: 0 0 30px 0;
-      font-weight: 400;
-    }
-    .cta-btn {
-      padding: 14px 36px;
-      border: none;
-      background: #fff;
-      color: #000;
-      font-size: 1.1rem;
-      font-weight: bold;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: background 0.3s;
-    }
-    .cta-btn:hover {
-      background: #ff8c42;
-      color: #fff;
     }
     nav {
       background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav ul {
       display: flex;
       justify-content: center;
-      padding: 10px 0;
-      gap: 30px;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 18px 0;
     }
-    nav a {
-      color: #ff3d68;
+    nav ul li a {
       text-decoration: none;
+      color: #ff3d68;
       font-weight: 600;
-      font-size: 1rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 17px;
       transition: color 0.2s;
+      letter-spacing: 0.5px;
     }
-    nav a:hover {
-      color: #222;
+    nav ul li a:hover {
+      color: #db1c4b;
+    }
+    header {
+      background: linear-gradient(105deg,#ff3d68 60%, #f7b42c 100%);
+      color: #fff;
+      padding: 70px 20px 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 0;
     }
     section {
-      margin: 60px auto;
-      max-width: 1100px;
-      padding: 0 16px;
+      background: #fff;
+      margin: 32px auto;
+      max-width: 900px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 7px;
+      padding: 36px 24px 28px 24px;
     }
-    .highlights {
+    section h2 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #ff3d68;
+      margin-top: 0;
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+    .team-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
+      gap: 24px;
+      margin-top: 15px;
     }
-    .highlight-card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      padding: 32px 24px;
-      width: 280px;
+    .team-member {
+      flex: 1 1 220px;
+      background: #f7f7f7;
+      border-radius: 5px;
+      padding: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
       text-align: center;
-      transition: transform 0.2s;
     }
-    .highlight-card:hover {
-      transform: translateY(-7px) scale(1.04);
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 12px;
+    .team-member img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
       object-fit: cover;
-      height: 180px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: transform 0.2s;
+      margin-bottom: 10px;
+      border: 2px solid #ff3d68;
     }
-    .gallery img:hover {
-      transform: scale(1.04);
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px;
     }
-    .schedule {
-      background: #fff;
-      border-radius: 16px;
-      padding: 28px 22px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 7px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      height: 120px;
+      object-fit: cover;
     }
-    .schedule h3 {
-      margin-top: 0;
-    }
-    .schedule-list {
+    .schedule-list, .past-events-list {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    .schedule-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid #f0f0f0;
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.05rem;
+    .schedule-list li, .past-events-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
     }
-    .schedule-list li:last-child {
+    .schedule-list li:last-child, .past-events-list li:last-child {
       border-bottom: none;
     }
     .contact-form {
-      background: #fff;
-      border-radius: 16px;
-      padding: 28px 22px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 440px;
       margin: 0 auto;
     }
-    .contact-form label {
-      font-weight: 500;
-      display: block;
-      margin-bottom: 6px;
-    }
     .contact-form input, .contact-form textarea {
-      width: 100%;
       padding: 10px;
-      margin-bottom: 18px;
-      border-radius: 8px;
-      border: 1px solid #eee;
+      border: 1px solid #ddd;
+      border-radius: 4px;
       font-size: 1rem;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .contact-form textarea {
       resize: vertical;
+      min-height: 70px;
     }
     .contact-form button {
       background: #ff3d68;
       color: #fff;
       border: none;
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: bold;
+      border-radius: 4px;
+      font-size: 1.07rem;
+      padding: 12px 0;
+      font-family: 'Montserrat', Arial, sans-serif;
       cursor: pointer;
-      font-size: 1rem;
       transition: background 0.2s;
     }
     .contact-form button:hover {
-      background: #ff8c42;
+      background: #db1c4b;
     }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 30px 0 18px 0;
-    }
-    .social-links {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-    }
-    .social-links a {
-      color: #ff8c42;
-      font-size: 1.4rem;
-      transition: color 0.2s;
-      text-decoration: none;
-    }
-    .social-links a:hover {
-      color: #fff;
-    }
-    .logo-container {
-      text-align: center;
-      margin: 32px 0 16px 0;
-    }
-    .logo-animated {
-      max-width: 250px;
-      width: 100%;
-      height: auto;
-      opacity: 0;
-      transform: scale(0.85);
-      animation: logoFadeInScale 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-    }
-    @keyframes logoFadeInScale {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    @media (max-width: 768px) {
-      .highlights {
+    @media (max-width: 700px) {
+      nav ul {
         flex-direction: column;
-        align-items: center;
+        gap: 16px;
+        padding: 14px 0;
+      }
+      section {
+        padding: 22px 10px;
       }
       header h1 {
         font-size: 2rem;
       }
     }
   </style>
-  <!-- Icons: fontawesome CDN (for social icons) -->
-  <script src="https://kit.fontawesome.com/9d8e6e4e7e.js" crossorigin="anonymous"></script>
 </head>
 <body id="top">
-  <div class="logo-container">
-    <img src="my-pg1.jpg" alt="Company Logo" class="logo-animated">
-  </div>
-  <header>
-    <h1>Pure Afro Events</h1>
-    <p>Experience the vibrancy of Afro culture. Join us for unforgettable events, music, dance, and celebration!</p>
-    <a class="cta-btn" href="#contact">RSVP Now</a>
-  </header>
   <nav>
     <ul>
-    <li><a href="#top">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#highlights">Highlights</a></li>
-    <li><a href="#schedule">Schedule</a></li>
-    <li><a href="events.html">Past Events</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
- 
-<section id="top">
-    <h2>Home</h2>
-    <p>Welcome to Pure Afro Events! Celebrate Afro culture, dance, and community with us.</p>
-  </section>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#past-events">Past Events</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="top">
+    <h1>Pure Afro Events</h1>
+    <p>Celebrating Afro culture through vibrant gatherings, music, and unforgettable experiences.</p>
+  </header>
 
   <section id="about">
     <h2>About</h2>
-    <p>Learn more about our mission, vision, and the team behind Pure Afro Events.</p>
+    <p>
+      Pure Afro Events is dedicated to bringing together people who love Afro music, dance, and culture.
+      Our mission is to create memorable experiences that showcase the diversity and richness of Afro heritage.
+      We believe in unity, joy, and cultural expression through events that inspire, educate, and entertain.
+    </p>
   </section>
 
   <section id="highlights">
     <h2>Highlights</h2>
-    <p>Check out the best moments and performances from our recent events.</p>
+    <ul>
+      <li>Live performances from renowned Afro artists and DJs.</li>
+      <li>Dance workshops and cultural exhibitions.</li>
+      <li>Unique food and drink experiences from across Africa.</li>
+      <li>Networking and community activities.</li>
+    </ul>
   </section>
 
   <section id="schedule">
     <h2>Schedule</h2>
-    <p>Find details about our upcoming events and activities.</p>
+    <ul class="schedule-list">
+      <li><strong>August 25, 2025:</strong> Afro Beats Night - Nairobi</li>
+      <li><strong>September 10, 2025:</strong> Pure Afro Festival - Lagos</li>
+      <li><strong>October 5, 2025:</strong> Culture & Dance Workshop - Accra</li>
+      <li><strong>October 28, 2025:</strong> Afro Food Fair - Johannesburg</li>
+    </ul>
   </section>
 
   <section id="past-events">
     <h2>Past Events</h2>
-    <p>Discover memories from our previous events, including photos, videos, and testimonials.</p>
-    <!-- Add more details or a list of past events here -->
+    <ul class="past-events-list">
+      <li><strong>July 2025:</strong> Afro Carnival Nairobi - 1200+ Attendees</li>
+      <li><strong>June 2025:</strong> Afro-Fusion Night - Lagos</li>
+      <li><strong>May 2025:</strong> Afro Dance Meetup - Accra</li>
+      <li><strong>April 2025:</strong> Pure Afro Pop-Up - Cape Town</li>
+    </ul>
   </section>
 
   <section id="gallery">
     <h2>Gallery</h2>
-    <p>View photos and videos from our vibrant events.</p>
-    <!-- Add your gallery images here -->
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Event photo 1">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Event photo 2">
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Event photo 3">
+      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80" alt="Event photo 4">
+    </div>
   </section>
 
   <section id="team">
     <h2>Team</h2>
-    <p>Meet the creative and passionate individuals behind Pure Afro Events.</p>
-    <!-- Add team member profiles or photos here -->
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team member 1">
+        <h4>John Asibo</h4>
+        <p>Founder & Organizer</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team member 2">
+        <h4>Abena Mensah</h4>
+        <p>Event Coordinator</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Team member 3">
+        <h4>Kwame Opoku</h4>
+        <p>Music Director</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Team member 4">
+        <h4>Zanele Moyo</h4>
+        <p>Marketing Lead</p>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Reach out to us for inquiries, collaborations, or feedback.</p>
-    <!-- Add your contact form or info here -->
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p style="margin-top:18px;text-align:center;">Or email us at <a href="mailto:info@pureafroevents.com" style="color:#ff3d68;">info@pureafroevents.com</a></p>
   </section>
-  <footer>
-    <div>© 2025 Pure Afro Events. All rights reserved.</div>
-    <div class="social-links">
-      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-    </div>
-  </footer>
 </body>
 </html>
-
